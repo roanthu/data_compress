@@ -10,7 +10,12 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.15.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.15.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.15.3/CMakeSystem.cmake"
+  "CMakeFiles/CheckTypeSize/OFF64_T.c"
   "CMakeLists.txt"
+  "ext/CMakeLists.txt"
+  "ext/zlib/CMakeLists.txt"
+  "ext/zlib/zconf.h.cmakein"
+  "ext/zlib/zlib.pc.cmakein"
   "/usr/local/share/cmake-3.15/Modules/CMakeCInformation.cmake"
   "/usr/local/share/cmake-3.15/Modules/CMakeCXXInformation.cmake"
   "/usr/local/share/cmake-3.15/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -20,6 +25,14 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/share/cmake-3.15/Modules/CMakeLanguageInformation.cmake"
   "/usr/local/share/cmake-3.15/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/local/share/cmake-3.15/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/usr/local/share/cmake-3.15/Modules/CheckCSourceCompiles.cmake"
+  "/usr/local/share/cmake-3.15/Modules/CheckFunctionExists.c"
+  "/usr/local/share/cmake-3.15/Modules/CheckFunctionExists.cmake"
+  "/usr/local/share/cmake-3.15/Modules/CheckIncludeFile.c.in"
+  "/usr/local/share/cmake-3.15/Modules/CheckIncludeFile.cmake"
+  "/usr/local/share/cmake-3.15/Modules/CheckIncludeFileCXX.cmake"
+  "/usr/local/share/cmake-3.15/Modules/CheckTypeSize.c.in"
+  "/usr/local/share/cmake-3.15/Modules/CheckTypeSize.cmake"
   "/usr/local/share/cmake-3.15/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/usr/local/share/cmake-3.15/Modules/Compiler/GNU-C.cmake"
   "/usr/local/share/cmake-3.15/Modules/Compiler/GNU-CXX.cmake"
@@ -41,10 +54,19 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "ext/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "ext/zlib/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/data_compress.dir/DependInfo.cmake"
   "CMakeFiles/zstd_test.dir/DependInfo.cmake"
+  "CMakeFiles/data_compress.dir/DependInfo.cmake"
+  "CMakeFiles/zlib_test.dir/DependInfo.cmake"
+  "ext/zlib/CMakeFiles/zlibstatic.dir/DependInfo.cmake"
+  "ext/zlib/CMakeFiles/zlib.dir/DependInfo.cmake"
+  "ext/zlib/CMakeFiles/example.dir/DependInfo.cmake"
+  "ext/zlib/CMakeFiles/minigzip.dir/DependInfo.cmake"
+  "ext/zlib/CMakeFiles/minigzip64.dir/DependInfo.cmake"
+  "ext/zlib/CMakeFiles/example64.dir/DependInfo.cmake"
   )

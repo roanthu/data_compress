@@ -56,16 +56,41 @@ CMAKE_BINARY_DIR = /home/thurv/dev/data_compress
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -77,6 +102,27 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +157,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named zstd_test
+
+# Build rule for target.
+zstd_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zstd_test
+.PHONY : zstd_test
+
+# fast build rule for target.
+zstd_test/fast:
+	$(MAKE) -f CMakeFiles/zstd_test.dir/build.make CMakeFiles/zstd_test.dir/build
+.PHONY : zstd_test/fast
+
+#=============================================================================
 # Target rules for targets named data_compress
 
 # Build rule for target.
@@ -124,17 +183,95 @@ data_compress/fast:
 .PHONY : data_compress/fast
 
 #=============================================================================
-# Target rules for targets named zstd_test
+# Target rules for targets named zlib_test
 
 # Build rule for target.
-zstd_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 zstd_test
-.PHONY : zstd_test
+zlib_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zlib_test
+.PHONY : zlib_test
 
 # fast build rule for target.
-zstd_test/fast:
-	$(MAKE) -f CMakeFiles/zstd_test.dir/build.make CMakeFiles/zstd_test.dir/build
-.PHONY : zstd_test/fast
+zlib_test/fast:
+	$(MAKE) -f CMakeFiles/zlib_test.dir/build.make CMakeFiles/zlib_test.dir/build
+.PHONY : zlib_test/fast
+
+#=============================================================================
+# Target rules for targets named zlibstatic
+
+# Build rule for target.
+zlibstatic: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zlibstatic
+.PHONY : zlibstatic
+
+# fast build rule for target.
+zlibstatic/fast:
+	$(MAKE) -f ext/zlib/CMakeFiles/zlibstatic.dir/build.make ext/zlib/CMakeFiles/zlibstatic.dir/build
+.PHONY : zlibstatic/fast
+
+#=============================================================================
+# Target rules for targets named zlib
+
+# Build rule for target.
+zlib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zlib
+.PHONY : zlib
+
+# fast build rule for target.
+zlib/fast:
+	$(MAKE) -f ext/zlib/CMakeFiles/zlib.dir/build.make ext/zlib/CMakeFiles/zlib.dir/build
+.PHONY : zlib/fast
+
+#=============================================================================
+# Target rules for targets named example
+
+# Build rule for target.
+example: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 example
+.PHONY : example
+
+# fast build rule for target.
+example/fast:
+	$(MAKE) -f ext/zlib/CMakeFiles/example.dir/build.make ext/zlib/CMakeFiles/example.dir/build
+.PHONY : example/fast
+
+#=============================================================================
+# Target rules for targets named minigzip
+
+# Build rule for target.
+minigzip: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 minigzip
+.PHONY : minigzip
+
+# fast build rule for target.
+minigzip/fast:
+	$(MAKE) -f ext/zlib/CMakeFiles/minigzip.dir/build.make ext/zlib/CMakeFiles/minigzip.dir/build
+.PHONY : minigzip/fast
+
+#=============================================================================
+# Target rules for targets named minigzip64
+
+# Build rule for target.
+minigzip64: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 minigzip64
+.PHONY : minigzip64
+
+# fast build rule for target.
+minigzip64/fast:
+	$(MAKE) -f ext/zlib/CMakeFiles/minigzip64.dir/build.make ext/zlib/CMakeFiles/minigzip64.dir/build
+.PHONY : minigzip64/fast
+
+#=============================================================================
+# Target rules for targets named example64
+
+# Build rule for target.
+example64: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 example64
+.PHONY : example64
+
+# fast build rule for target.
+example64/fast:
+	$(MAKE) -f ext/zlib/CMakeFiles/example64.dir/build.make ext/zlib/CMakeFiles/example64.dir/build
+.PHONY : example64/fast
 
 main.o: main.cpp.o
 
@@ -162,6 +299,33 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/data_compress.dir/build.make CMakeFiles/data_compress.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+zlib_test.o: zlib_test.cpp.o
+
+.PHONY : zlib_test.o
+
+# target to build an object file
+zlib_test.cpp.o:
+	$(MAKE) -f CMakeFiles/zlib_test.dir/build.make CMakeFiles/zlib_test.dir/zlib_test.cpp.o
+.PHONY : zlib_test.cpp.o
+
+zlib_test.i: zlib_test.cpp.i
+
+.PHONY : zlib_test.i
+
+# target to preprocess a source file
+zlib_test.cpp.i:
+	$(MAKE) -f CMakeFiles/zlib_test.dir/build.make CMakeFiles/zlib_test.dir/zlib_test.cpp.i
+.PHONY : zlib_test.cpp.i
+
+zlib_test.s: zlib_test.cpp.s
+
+.PHONY : zlib_test.s
+
+# target to generate assembly for a file
+zlib_test.cpp.s:
+	$(MAKE) -f CMakeFiles/zlib_test.dir/build.make CMakeFiles/zlib_test.dir/zlib_test.cpp.s
+.PHONY : zlib_test.cpp.s
 
 zstd_test.o: zstd_test.cpp.o
 
@@ -196,13 +360,27 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... data_compress"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
 	@echo "... zstd_test"
+	@echo "... data_compress"
+	@echo "... zlib_test"
+	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... zlibstatic"
+	@echo "... zlib"
+	@echo "... example"
+	@echo "... minigzip"
+	@echo "... minigzip64"
+	@echo "... example64"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... zlib_test.o"
+	@echo "... zlib_test.i"
+	@echo "... zlib_test.s"
 	@echo "... zstd_test.o"
 	@echo "... zstd_test.i"
 	@echo "... zstd_test.s"

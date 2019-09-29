@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/zlib_test.dir/zlib_test.cpp.o  -o zlib_test -Wl,-rpath,/home/thurv/dev/data_compress/ext/zlib ext/zlib/libz.so.1.2.11 

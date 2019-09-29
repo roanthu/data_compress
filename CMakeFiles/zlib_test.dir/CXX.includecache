@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/thurv/dev/data_compress/zlib_test.cpp
+iostream
+-
+lz4frame.h
+-
+cstring
+-
+zlib.h
+/home/thurv/dev/data_compress/zlib.h
+
+ext/zlib/zconf.h
+stddef.h
+-
+windows.h
+-
+limits.h
+-
+sys/types.h
+-
+stdarg.h
+-
+stddef.h
+-
+unistd.h
+-
+unixio.h
+-
+
+ext/zlib/zlib.h
+zconf.h
+ext/zlib/zconf.h
+

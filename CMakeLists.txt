@@ -17,3 +17,11 @@ set_target_properties(zstd PROPERTIES LINKER_LANGUAGE C)
 target_link_libraries(zstd INTERFACE -lpthread)
 target_link_libraries(zstd_test zstd)
 target_include_directories(zstd_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ext/zstd/lib/)
+
+add_executable(zlib_test zlib_test.cpp)
+
+target_link_libraries(zlib_test PRIVATE zlib)
+target_include_directories(zlib_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ext/zlib)
+
+
+add_subdirectory(ext)
