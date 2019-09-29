@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/thurv/dev/data_compress/zstd_test.cpp
+iostream
+-
+zstd.h
+/home/thurv/dev/data_compress/zstd.h
+
+ext/zstd/lib/zstd.h
+limits.h
+-
+stddef.h
+-
+

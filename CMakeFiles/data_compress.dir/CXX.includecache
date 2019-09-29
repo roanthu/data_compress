@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/thurv/dev/data_compress/main.cpp
+iostream
+-
+lz4frame.h
+-
+cstring
+-
+lz4.h
+-
+
+ext/lz4/lib/lz4.h
+stddef.h
+-
+stdint.h
+-
+
+ext/lz4/lib/lz4frame.h
+stddef.h
+-
+

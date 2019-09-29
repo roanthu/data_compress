@@ -1,0 +1,3 @@
+/home/thurv/dev/data_compress/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/thurv/dev/data_compress/cmake-build-debug/CMakeFiles/data_compress.dir
+/home/thurv/dev/data_compress/cmake-build-debug/CMakeFiles/edit_cache.dir

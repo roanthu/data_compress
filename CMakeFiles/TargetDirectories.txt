@@ -1,0 +1,4 @@
+/home/thurv/dev/data_compress/CMakeFiles/rebuild_cache.dir
+/home/thurv/dev/data_compress/CMakeFiles/edit_cache.dir
+/home/thurv/dev/data_compress/CMakeFiles/data_compress.dir
+/home/thurv/dev/data_compress/CMakeFiles/zstd_test.dir

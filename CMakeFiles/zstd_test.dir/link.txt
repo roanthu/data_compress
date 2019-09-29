@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/zstd_test.dir/zstd_test.cpp.o  -o zstd_test ext/zstd/lib/libzstd.a -lpthread 

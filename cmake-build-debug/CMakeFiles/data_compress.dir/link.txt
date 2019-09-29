@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/data_compress.dir/main.cpp.o  -o data_compress 

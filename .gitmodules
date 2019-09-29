@@ -1,0 +1,6 @@
+[submodule "lz4"]
+	path = lz4
+	url = ./ext/lz4
+[submodule "zstd"]
+	path = zstd
+	url = ./ext/zstd

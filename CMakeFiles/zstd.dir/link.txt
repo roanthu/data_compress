@@ -1,0 +1,2 @@
+/usr/bin/ar qc libzstd.a  
+/usr/bin/ranlib libzstd.a
